@@ -12,6 +12,6 @@ setvideo_lvds1920x1080=setenv videomode video=mxcfb0:dev=ldb,LDB-1080P60,if=RGB2
 setmac_cmd=setenv ethaddr 00:4f:9f:01:00:0e
 do_calibrate=setenv calibrate fromconfig
 fdt_file=imx6q-novasom.dtb
-bootargs_linux=setenv bootargs root=/dev/ram rw ramdisk_size=444000 mem=1G console=ttymxc0,115200 vt.global_cursor_default=0 ${videomode} mac_addr=${ethaddr} 
+bootargs_linux=setenv bootargs root=/dev/ram rw ramdisk_size=444000 mem=2G console=ttymxc0,115200 vt.global_cursor_default=0 ${videomode} mac_addr=${ethaddr} 
 bootcmd_sd=mmc dev ${mmcdev};run setvideo_lvds1920x1080;run do_calibrate;run setmac_cmd;run bootargs_linux;run loaduimage;run loadinitrd;run mmcboot
 uenvcmd=run bootcmd_sd
